@@ -1,3 +1,4 @@
+import 'package:brasil_cripto/view/utils/values/finals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -36,6 +37,7 @@ class AppTextFormField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final TextInputType? keyboardType;
   final Widget? sufix;
+  final TextStyle? style = const TextStyle(color: Colors.white, fontSize: 14);
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +58,7 @@ class AppTextFormField extends StatelessWidget {
               keyboardType: keyboardType,
               inputFormatters: inputFormatters,
               maxLines: maxLines,
+              style: style,
               expands: maxLines == null ? true : false,
               validator: validator,
               onChanged: onChanged,
@@ -63,6 +66,12 @@ class AppTextFormField extends StatelessWidget {
               obscureText: obscureText ?? false,
               decoration: InputDecoration(
                 suffixIcon: sufix,
+                border: outlineBorder,
+                focusedBorder: outlineBorder,
+                enabledBorder: outlineBorder,
+                disabledBorder: outlineBorder,
+                errorBorder: outlineBorder,
+                focusedErrorBorder: outlineBorder,
                 suffixIconColor: Colors.white,
                 errorText: errorText,
                 isCollapsed: maxLines == null ? true : false,
@@ -72,7 +81,9 @@ class AppTextFormField extends StatelessWidget {
                   maxHeight: 96,
                 ),
                 hintText: hintText,
-                hintStyle: TextStyle(color: Colors.white.withAlpha(100)),
+                hintStyle: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.7),
+                ),
               ),
             ),
           ],
