@@ -31,12 +31,7 @@ class BrasilCripto extends StatelessWidget {
           },
           child: FallingCoinsBackground(
             numberOfCoins: 20,
-            child: UiOverlayColor(
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 40),
-                child: child!,
-              ),
-            ),
+            child: UiOverlayColor(child: child!),
           ),
         );
       },
