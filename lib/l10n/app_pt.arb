@@ -1,4 +1,22 @@
 {
     "@@locale": "pt",
-    "start_label": "Vamos Começar"
+    "country_code": "BR",
+    "start_label": "Vamos Começar",
+    "search_coins_label": "Pesquisar moedas...",
+    "currency": "brl",
+    "no_coins_found": "Nenhuma moeda encontrada",
+    "details": "Detalhes",
+    "price_chart": "Gráfico de Preços",
+    "try_again": "Tentar novamente",
+    "statistics": "Estatísticas",
+    "market_cap": "Capitalização de Mercado",
+    "market_ranking": "Ranking de Mercado",
+    "change_24h": "Variação 24h",
+    "price_change_24h": "Mudança de Preço 24h",
+    "about": "Sobre",
+    "no_data_available": "Nenhum dado disponível",
+    "detailed_info_coming_soon": "Informações detalhadas estarão disponíveis em breve. Esta seção incluirá descrição da moeda, tecnologia, equipe e roadmap.",
+    "chart_min": "Mínimo",
+    "chart_max": "Máximo",
+    "chart_variation": "Variação"
 }

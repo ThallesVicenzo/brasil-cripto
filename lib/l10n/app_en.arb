@@ -1,4 +1,22 @@
 {
     "@@locale": "en",
-    "start_label": "Let's Start"
+    "country_code": "US",
+    "start_label": "Let's Start",
+    "search_coins_label": "Search Coins...",
+    "currency": "usd",
+    "no_coins_found": "No coins found",
+    "details": "Details",
+    "price_chart": "Price Chart",
+    "try_again": "Try again",
+    "statistics": "Statistics",
+    "market_cap": "Market Cap",
+    "market_ranking": "Market Ranking",
+    "change_24h": "24h Change",
+    "price_change_24h": "24h Price Change",
+    "about": "About",
+    "no_data_available": "No data available",
+    "detailed_info_coming_soon": "Detailed information will be available soon. This section will include coin description, technology, team and roadmap.",
+    "chart_min": "Min",
+    "chart_max": "Max",
+    "chart_variation": "Variation"
 }
