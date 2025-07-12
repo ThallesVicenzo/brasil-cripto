@@ -1,3 +1,4 @@
+import 'package:brasil_cripto/view/utils/widgets/colors/app_colors.dart';
 import 'package:brasil_cripto/view/utils/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 
@@ -23,11 +24,11 @@ class DefaultButton extends StatelessWidget {
         height: height,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(0xFFf7931a),
+          color: AppColors.primaryTransparentOrange,
           borderRadius: BorderRadius.circular(25),
         ),
         child: Center(
-          child: AppText.medium(
+          child: AppText.mediumSmall(
             label,
             style: MyTextStyle(fontWeight: FontWeight.bold),
           ),

@@ -11,9 +11,11 @@ abstract class AppColors {
 
   static Color disabledGray = const Color(0xFF9E9E9E);
 
-  static Color enabledEmber = const Color(0xFFFFB300);
-
   static Color textGray = const Color(0xFF616161);
 
   static Color errorText = const Color(0xFFFB8C00);
+
+  static Color primaryTransparentOrange = const Color(
+    0xFFEF6C00,
+  ).withValues(alpha: 0.8);
 }

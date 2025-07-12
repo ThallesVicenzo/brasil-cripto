@@ -162,7 +162,7 @@ class CoinTile extends StatelessWidget {
                   isFavorite ? Icons.star : Icons.star_border,
                   color:
                       isFavorite
-                          ? AppColors.enabledEmber
+                          ? AppColors.primaryTransparentOrange
                           : AppColors.disabledGray,
                   size: 20,
                 ),
