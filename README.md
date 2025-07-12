@@ -137,7 +137,6 @@ This app uses the **CoinGecko API** for cryptocurrency data:
 ### ⚠️ **Important Notes**
 - The API has rate limiting on the free tier
 - If rate limits are exceeded, the app will show appropriate error messages
-- For production apps with high traffic, consider upgrading to CoinGecko's paid plans
 - The app includes fallback chart data generation when API requests fail
 
 ### 🔄 **Error Handling**
@@ -220,6 +219,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or need help, please:
 1. Check the [Issues](https://github.com/yourusername/brasil-cripto/issues) page
 2. Create a new issue with detailed information
-3. Contact the development team
+3. Feel free to contact me on my professional email
 
 ---
