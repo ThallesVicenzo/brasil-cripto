@@ -30,7 +30,7 @@ class BrasilCripto extends StatelessWidget {
             FocusManager.instance.primaryFocus?.unfocus();
           },
           child: FallingCoinsBackground(
-            numberOfCoins: 20,
+            numberOfCoins: 15,
             child: UiOverlayColor(child: child!),
           ),
         );
