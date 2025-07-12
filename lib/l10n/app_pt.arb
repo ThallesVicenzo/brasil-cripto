@@ -26,7 +26,7 @@
     "remove_from_favorites_confirmation": "Você deseja remover {coin} dos seus favoritos?",
     "cancel_label": "Cancelar",
     "yes_label": "Sim",
-    "rate_limit_upgrade_message": "Limite de requisições excedido. Por favor, tente novamente mais tarde. Visite https://www.coingecko.com/en/api/pricing para planos com maior limite.",
+    "rate_limit_upgrade_message": "Limite de requisições excedido. Por favor, tente novamente mais tarde",
     "network_error": "Erro de rede. Verifique sua conexão.",
     "general_fetch_error": "Erro ao buscar moedas. Tente novamente.",
     "chart_network_error": "Erro de conexão. Exibindo dados simulados.",

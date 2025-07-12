@@ -26,7 +26,7 @@
     "remove_from_favorites_confirmation": "Do you want to remove {coin} from your favorites?",
     "cancel_label": "Cancel",
     "yes_label": "Yes",
-    "rate_limit_upgrade_message": "Rate limit exceeded, please wait a few minutes before trying again. Visit https://www.coingecko.com/en/api/pricing for higher rate limit plans.",
+    "rate_limit_upgrade_message": "Rate limit exceeded, please wait a few minutes before trying again.",
     "network_error": "Network error. Please check your connection.",
     "general_fetch_error": "Error fetching coins. Please try again.",
     "chart_network_error": "Connection error. Showing simulated data.",
