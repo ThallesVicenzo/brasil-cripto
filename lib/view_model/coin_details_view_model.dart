@@ -19,6 +19,7 @@ class CoinDetailsViewModel extends ChangeNotifier {
   final FavoritesService _favoritesService = sl<FavoritesService>();
 
   StreamSubscription<List<CoinModel>>? _favoritesSubscription;
+  bool _disposed = false;
 
   AppLocalizations get _intl => sl<GlobalAppLocalizations>().current;
 
@@ -60,13 +61,14 @@ class CoinDetailsViewModel extends ChangeNotifier {
       favorites,
     ) {
       isFavorite = _favoritesService.isFavorite(coin.id);
-      notifyListeners();
+      _safeNotifyListeners();
     });
-    notifyListeners();
+    _safeNotifyListeners();
   }
 
   @override
   void dispose() {
+    _disposed = true;
     _favoritesSubscription?.cancel();
     super.dispose();
   }
@@ -88,7 +90,7 @@ class CoinDetailsViewModel extends ChangeNotifier {
         errorMessage = _getErrorMessage(failure);
         _generateFallbackChartData();
         isLoading = false;
-        notifyListeners();
+        _safeNotifyListeners();
       },
       (chartModel) {
         if (chartModel.prices.isNotEmpty) {
@@ -99,7 +101,7 @@ class CoinDetailsViewModel extends ChangeNotifier {
         hasError = false;
         errorMessage = '';
         isLoading = false;
-        notifyListeners();
+        _safeNotifyListeners();
       },
     );
   }
@@ -198,6 +200,12 @@ class CoinDetailsViewModel extends ChangeNotifier {
       return _intl.chart_server_error;
     } else {
       return _intl.chart_generic_error;
+    }
+  }
+
+  void _safeNotifyListeners() {
+    if (!_disposed) {
+      notifyListeners();
     }
   }
 }

@@ -17,6 +17,8 @@ class HomeViewModel extends ChangeNotifier {
 
   AppLocalizations get _intl => sl<GlobalAppLocalizations>().current;
 
+  bool _disposed = false;
+
   HomeViewModel(this.homeRepository, this.secureStorage) {
     _previousSearchText = searchController.text;
     searchController.addListener(onSearchChanged);
@@ -44,11 +46,18 @@ class HomeViewModel extends ChangeNotifier {
 
   @override
   void dispose() {
+    _disposed = true;
     _textEditing?.cancel();
     _favoritesSubscription?.cancel();
     searchController.removeListener(onSearchChanged);
     searchController.dispose();
     super.dispose();
+  }
+
+  void _safeNotifyListeners() {
+    if (!_disposed) {
+      notifyListeners();
+    }
   }
 
   void _initializeFavorites() async {
@@ -57,14 +66,14 @@ class HomeViewModel extends ChangeNotifier {
       favorites,
     ) {
       favoriteCoins = favorites;
-      notifyListeners();
+      _safeNotifyListeners();
     });
   }
 
-  void retrieveFavoriteCoins() async {
+  Future<void> retrieveFavoriteCoins() async {
     await _favoritesService.loadFavorites(secureStorage);
     favoriteCoins = _favoritesService.favoriteCoins;
-    notifyListeners();
+    _safeNotifyListeners();
   }
 
   Future<void> saveFavoriteCoin(CoinModel coin) async {
@@ -85,7 +94,7 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   void updateFavoriteStatusForDisplayedCoins() {
-    notifyListeners();
+    _safeNotifyListeners();
   }
 
   List<Map<String, dynamic>> get coinsWithFavoriteInfo {
@@ -101,7 +110,7 @@ class HomeViewModel extends ChangeNotifier {
   void clearError() {
     hasError = false;
     errorMessage = null;
-    notifyListeners();
+    _safeNotifyListeners();
   }
 
   void onSearchChanged() {
@@ -119,7 +128,7 @@ class HomeViewModel extends ChangeNotifier {
       showEmptyState = false;
       hasError = false;
       errorMessage = null;
-      notifyListeners();
+      _safeNotifyListeners();
       return;
     }
 
@@ -132,7 +141,7 @@ class HomeViewModel extends ChangeNotifier {
 
   Future<void> fetchData({required String name, int page = 1}) async {
     isLoading = true;
-    notifyListeners();
+    _safeNotifyListeners();
 
     final result = await homeRepository.fetchCoins(name: name, page: page);
 
@@ -151,7 +160,7 @@ class HomeViewModel extends ChangeNotifier {
           errorMessage = _intl.general_fetch_error;
         }
 
-        notifyListeners();
+        _safeNotifyListeners();
       },
       (fetchedCoins) {
         coins.clear();
@@ -160,7 +169,7 @@ class HomeViewModel extends ChangeNotifier {
         isLoading = false;
         hasError = false;
         errorMessage = null;
-        notifyListeners();
+        _safeNotifyListeners();
       },
     );
   }

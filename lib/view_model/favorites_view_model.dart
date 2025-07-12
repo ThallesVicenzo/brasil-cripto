@@ -12,6 +12,7 @@ class FavoritesViewModel extends ChangeNotifier {
   final FavoritesService _favoritesService = sl<FavoritesService>();
 
   StreamSubscription<List<CoinModel>>? _favoritesSubscription;
+  bool _disposed = false;
 
   FavoritesViewModel(this.homeRepository, this.secureStorage) {
     _initializeFavorites();
@@ -24,26 +25,34 @@ class FavoritesViewModel extends ChangeNotifier {
 
   @override
   void dispose() {
+    if (_disposed) return; // Previne dispose duplo
+    _disposed = true;
     _favoritesSubscription?.cancel();
     super.dispose();
   }
 
   void _initializeFavorites() async {
     isLoading = true;
-    notifyListeners();
+    _safeNotifyListeners();
 
     await _favoritesService.loadFavorites(secureStorage);
     favoriteCoins = _favoritesService.favoriteCoins;
 
-    _favoritesSubscription = _favoritesService.favoritesStream.listen((
-      favorites,
-    ) {
-      favoriteCoins = favorites;
-      notifyListeners();
-    });
+    _favoritesSubscription = _favoritesService.favoritesStream.listen(
+      (favorites) {
+        favoriteCoins = favorites;
+        _safeNotifyListeners();
+      },
+      onError: (error) {
+        // Handle stream errors gracefully
+        hasError = true;
+        errorMessage = error.toString();
+        _safeNotifyListeners();
+      },
+    );
 
     isLoading = false;
-    notifyListeners();
+    _safeNotifyListeners();
   }
 
   Future<void> toggleFavoriteCoin(CoinModel coin) async {
@@ -58,18 +67,24 @@ class FavoritesViewModel extends ChangeNotifier {
     isLoading = true;
     hasError = false;
     errorMessage = null;
-    notifyListeners();
+    _safeNotifyListeners();
 
     await _favoritesService.loadFavorites(secureStorage);
     favoriteCoins = _favoritesService.favoriteCoins;
 
     isLoading = false;
-    notifyListeners();
+    _safeNotifyListeners();
   }
 
   void clearError() {
     hasError = false;
     errorMessage = null;
-    notifyListeners();
+    _safeNotifyListeners();
+  }
+
+  void _safeNotifyListeners() {
+    if (!_disposed) {
+      notifyListeners();
+    }
   }
 }
