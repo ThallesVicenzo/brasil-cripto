@@ -35,5 +35,6 @@
     "ok_label": "OK",
     "favorites_title": "Favoritos",
     "no_favorites_found": "Nenhuma moeda favorita encontrada",
-    "add_favorites_instruction": "Adicione moedas aos seus favoritos tocando no ícone de estrela"
+    "add_favorites_instruction": "Adicione moedas aos seus favoritos tocando no ícone de estrela",
+    "generic_error_message": "Ocorreu um erro. Por favor, tente novamente mais tarde."
 }

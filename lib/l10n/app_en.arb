@@ -35,6 +35,6 @@
     "ok_label": "OK",
     "favorites_title": "Favorites",
     "no_favorites_found": "No favorite coins found",
-    "add_favorites_instruction": "Add coins to your favorites by tapping the star icon"
-
+    "add_favorites_instruction": "Add coins to your favorites by tapping the star icon",
+    "generic_error_message": "An error occurred. Please try again later."
 }
