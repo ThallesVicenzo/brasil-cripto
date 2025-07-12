@@ -1,4 +1,4 @@
-import 'package:brasil_cripto/view/utils/widgets/text/app_text.dart';
+import 'package:brasil_cripto/view/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {

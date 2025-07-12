@@ -1,5 +1,5 @@
-import 'package:brasil_cripto/view/utils/widgets/colors/app_colors.dart';
-import 'package:brasil_cripto/view/utils/widgets/text/app_text.dart';
+import 'package:brasil_cripto/view/widgets/colors/app_colors.dart';
+import 'package:brasil_cripto/view/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
