@@ -1,8 +1,8 @@
 import 'package:brasil_cripto/app_injector.dart';
 import 'package:brasil_cripto/l10n/global_app_localizations.dart';
 import 'package:brasil_cripto/view/utils/routes/manager/app_main_routes_manager.dart';
-import 'package:brasil_cripto/view/utils/widgets/animations/falling_coins_background.dart';
-import 'package:brasil_cripto/view/utils/widgets/colors/ui_overlay_color.dart';
+import 'package:brasil_cripto/view/widgets/animations/falling_coins_background.dart';
+import 'package:brasil_cripto/view/widgets/colors/ui_overlay_color.dart';
 import 'package:flutter/material.dart';
 
 class BrasilCripto extends StatelessWidget {

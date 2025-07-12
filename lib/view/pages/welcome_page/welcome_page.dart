@@ -4,10 +4,10 @@ import 'package:brasil_cripto/app_injector.dart';
 import 'package:brasil_cripto/l10n/global_app_localizations.dart';
 import 'package:brasil_cripto/view/utils/routes/app_navigator/app_navigator.dart';
 import 'package:brasil_cripto/view/utils/routes/main_routes.dart';
-import 'package:brasil_cripto/view/utils/widgets/buttons/default_button.dart';
-import 'package:brasil_cripto/view/utils/widgets/colors/ui_overlay_color.dart';
-import 'package:brasil_cripto/view/utils/widgets/images/asset_image_widget.dart';
-import 'package:brasil_cripto/view/utils/widgets/spacing/default_padding.dart';
+import 'package:brasil_cripto/view/widgets/buttons/default_button.dart';
+import 'package:brasil_cripto/view/widgets/colors/ui_overlay_color.dart';
+import 'package:brasil_cripto/view/widgets/images/asset_image_widget.dart';
+import 'package:brasil_cripto/view/widgets/spacing/default_padding.dart';
 import 'package:brasil_cripto/view_model/utils/enums/app_images.dart';
 import 'package:flutter/material.dart';
 

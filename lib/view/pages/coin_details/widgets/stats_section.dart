@@ -1,8 +1,8 @@
 import 'package:brasil_cripto/app_injector.dart';
 import 'package:brasil_cripto/l10n/global_app_localizations.dart';
 import 'package:brasil_cripto/view/pages/coin_details/widgets/coin_stats.dart';
-import 'package:brasil_cripto/view/utils/widgets/colors/app_colors.dart';
-import 'package:brasil_cripto/view/utils/widgets/text/app_text.dart';
+import 'package:brasil_cripto/view/widgets/colors/app_colors.dart';
+import 'package:brasil_cripto/view/widgets/text/app_text.dart';
 import 'package:brasil_cripto/view_model/coin_details_view_model.dart';
 import 'package:brasil_cripto/view_model/utils/formatters/currency_formatter.dart';
 import 'package:flutter/material.dart';
