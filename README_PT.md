@@ -137,7 +137,6 @@ Este aplicativo usa a **API CoinGecko** para dados de criptomoedas:
 ### ⚠️ **Notas Importantes**
 - A API tem limitação de taxa no nível gratuito
 - Se os limites de taxa forem excedidos, o app mostrará mensagens de erro apropriadas
-- Para apps de produção com tráfego alto, considere atualizar para os planos pagos do CoinGecko
 - O app inclui geração de dados de gráfico de fallback quando as requisições da API falham
 
 ### 🔄 **Tratamento de Erros**
@@ -180,20 +179,6 @@ O projeto inclui:
 - Testes de integração para fluxos completos
 - Serviços mock para testes isolados
 
-## 🤝 Contribuindo
-
-1. Faça um fork do repositório
-2. Crie uma branch de feature (`git checkout -b feature/funcionalidade-incrivel`)
-3. Commit suas mudanças (`git commit -m 'Adiciona funcionalidade incrível'`)
-4. Faça push para a branch (`git push origin feature/funcionalidade-incrivel`)
-5. Abra um Pull Request
-
-### Diretrizes de Desenvolvimento
-- Siga as diretrizes de estilo Flutter/Dart
-- Escreva testes para novas funcionalidades
-- Atualize a documentação conforme necessário
-- Certifique-se de que todos os testes passem antes de submeter PR
-
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
@@ -220,8 +205,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 Se você tiver alguma dúvida ou precisar de ajuda, por favor:
 1. Verifique a página de [Issues](https://github.com/yourusername/brasil-cripto/issues)
 2. Crie uma nova issue com informações detalhadas
-3. Entre em contato com a equipe de desenvolvimento
+3. Sinta-se livre para entrar em contato comigo no meu email profissional.
 
 ---
-
-**Feito com ❤️ no Brasil usando Flutter**
