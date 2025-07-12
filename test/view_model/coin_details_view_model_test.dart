@@ -8,7 +8,6 @@ import 'package:brasil_cripto/view_model/services/favorites_service.dart';
 import 'package:brasil_cripto/view_model/utils/secure_storage/secure_storage.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mockito/annotations.dart';
@@ -72,9 +71,7 @@ void main() {
         mockFavoritesService.favoritesStream,
       ).thenAnswer((_) => Stream.value([]));
       when(mockFavoritesService.isFavorite(any)).thenReturn(false);
-      when(
-        mockFavoritesService.loadFavorites(any),
-      ).thenAnswer((_) async => null);
+      when(mockFavoritesService.loadFavorites(any)).thenAnswer((_) async {});
 
       when(
         mockHomeRepository.fetchChartData(
@@ -344,7 +341,7 @@ void main() {
 
         when(
           mockFavoritesService.toggleFavorite(testCoin, mockHomeRepository),
-        ).thenAnswer((_) async => null);
+        ).thenAnswer((_) async {});
 
         // Act
         await viewModel.toggleFavorite();

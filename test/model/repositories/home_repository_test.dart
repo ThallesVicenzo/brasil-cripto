@@ -302,7 +302,7 @@ void main() {
 
       when(
         mockSecureStorage.write(key: anyNamed('key'), value: anyNamed('value')),
-      ).thenAnswer((_) async => null);
+      ).thenAnswer((_) async {});
 
       // Act
       final result = await repository.saveFavoriteCoinsToStorage(
