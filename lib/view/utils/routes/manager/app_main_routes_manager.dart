@@ -1,7 +1,8 @@
 import 'package:brasil_cripto/model/models/coin_model.dart';
 import 'package:brasil_cripto/view/pages/coin_details/coin_details_page.dart';
-import 'package:brasil_cripto/view/pages/home_page.dart';
-import 'package:brasil_cripto/view/pages/welcome_page.dart';
+import 'package:brasil_cripto/view/pages/favorites/favorites_page.dart';
+import 'package:brasil_cripto/view/pages/home_page/home_page.dart';
+import 'package:brasil_cripto/view/pages/welcome_page/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -38,6 +39,13 @@ final router = GoRouter(
           name: state.name,
         );
       },
+    ),
+    GoRoute(
+      path: '/favorites',
+      name: '/favorites',
+      pageBuilder:
+          (context, state) =>
+              MaterialPage(child: const FavoritesPage(), name: state.name),
     ),
   ],
 );

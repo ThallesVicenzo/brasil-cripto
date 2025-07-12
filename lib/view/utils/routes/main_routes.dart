@@ -1,7 +1,8 @@
 enum MainRoutes {
   welcome('/welcome'),
   home('/home'),
-  coinDetails('/coin-details');
+  coinDetails('/coin-details'),
+  favorites('/favorites');
 
   const MainRoutes(this.route);
 
