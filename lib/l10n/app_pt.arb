@@ -1,7 +1,7 @@
 {
     "@@locale": "pt",
     "country_code": "BR",
-    "start_label": "Vamos Começar",
+    "start_label": "Pesquisar Moedas Favoritas",
     "search_coins_label": "Pesquisar moedas...",
     "currency": "brl",
     "no_coins_found": "Nenhuma moeda encontrada",
@@ -18,5 +18,22 @@
     "detailed_info_coming_soon": "Informações detalhadas estarão disponíveis em breve. Esta seção incluirá descrição da moeda, tecnologia, equipe e roadmap.",
     "chart_min": "Mínimo",
     "chart_max": "Máximo",
-    "chart_variation": "Variação"
+    "chart_variation": "Variação",
+    "add_to_favorites": "Adicionar aos Favoritos",
+    "remove_from_favorites": "Remover dos Favoritos",
+    "favorite_coins": "Moedas Favoritas",
+    "add_to_favorites_confirmation": "Você deseja adicionar {coin} aos seus favoritos?",
+    "remove_from_favorites_confirmation": "Você deseja remover {coin} dos seus favoritos?",
+    "cancel_label": "Cancelar",
+    "yes_label": "Sim",
+    "rate_limit_upgrade_message": "Limite de requisições excedido. Por favor, tente novamente mais tarde. Visite https://www.coingecko.com/en/api/pricing para planos com maior limite.",
+    "network_error": "Erro de rede. Verifique sua conexão.",
+    "general_fetch_error": "Erro ao buscar moedas. Tente novamente.",
+    "chart_network_error": "Erro de conexão. Exibindo dados simulados.",
+    "chart_server_error": "Erro no servidor. Exibindo dados simulados.",
+    "chart_generic_error": "Erro ao carregar dados do gráfico. Exibindo dados simulados.",
+    "ok_label": "OK",
+    "favorites_title": "Favoritos",
+    "no_favorites_found": "Nenhuma moeda favorita encontrada",
+    "add_favorites_instruction": "Adicione moedas aos seus favoritos tocando no ícone de estrela"
 }
