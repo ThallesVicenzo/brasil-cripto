@@ -57,7 +57,56 @@ class CoinHeader extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: viewModel.toggleFavorite,
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return AlertDialog(
+                        title: AppText.medium(
+                          viewModel.isFavorite
+                              ? intl.remove_from_favorites
+                              : intl.add_to_favorites,
+                          style: MyTextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.textGray,
+                          ),
+                        ),
+                        content: AppText.mediumSmall(
+                          viewModel.isFavorite
+                              ? intl.remove_from_favorites_confirmation(
+                                viewModel.coin.name,
+                              )
+                              : intl.add_to_favorites_confirmation(
+                                viewModel.coin.name,
+                              ),
+                          style: MyTextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.textGray,
+                          ),
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.of(context).pop(),
+                            child: AppText.small(
+                              intl.cancel_label,
+                              style: MyTextStyle(color: Colors.black),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () async {
+                              await viewModel.toggleFavorite();
+                              Navigator.of(context).pop();
+                            },
+                            child: AppText.small(
+                              intl.yes_label,
+                              style: MyTextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
                 child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
@@ -68,7 +117,7 @@ class CoinHeader extends StatelessWidget {
                     viewModel.isFavorite ? Icons.star : Icons.star_border,
                     color:
                         viewModel.isFavorite
-                            ? AppColors.enabledEmber
+                            ? AppColors.primaryTransparentOrange
                             : AppColors.disabledGray,
                     size: 24,
                   ),

@@ -46,10 +46,11 @@ class ChartStatItem extends StatelessWidget {
           ],
         ),
         Flexible(
-          child: AppText.mediumSmall(
+          child: AppText(
             value,
             style: MyTextStyle(color: color, fontWeight: FontWeight.w600),
             overflow: TextOverflow.ellipsis,
+            fontSize: value.length > 10 ? FontSize.small : FontSize.mediumSmall,
           ),
         ),
       ],

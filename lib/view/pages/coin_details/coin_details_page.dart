@@ -25,7 +25,7 @@ class _CoinDetailsPageState extends State<CoinDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => CoinDetailsViewModel(widget.coin, sl()),
+      create: (context) => CoinDetailsViewModel(widget.coin, sl(), sl()),
       child: Scaffold(
         appBar: DefaultAppBar(title: intl.details, hasLeading: true),
         body: Consumer<CoinDetailsViewModel>(
