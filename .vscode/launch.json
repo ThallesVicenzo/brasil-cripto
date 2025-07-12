@@ -1,0 +1,83 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "brasil-cripto (debug)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "brasil-cripto (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "brasil-cripto (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "Run all Tests (Debug)",
+            "type": "dart",
+            "request": "launch",
+            "program": "./test/",
+            "console": "terminal"
+        },
+        {
+            "name": "Run all Tests (Release)",
+            "type": "dart",
+            "request": "launch",
+            "program": "./test/",
+            "args": ["--release"],
+            "console": "terminal"
+        },
+        {
+            "name": "Integration Tests",
+            "type": "dart",
+            "request": "launch",
+            "program": "./integration_test/",
+            "console": "terminal"
+        },
+        {
+            "name": "brasil-cripto (iOS Simulator)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "args": ["-d", "ios"]
+        },
+        {
+            "name": "brasil-cripto (Android Emulator)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "args": ["-d", "android"]
+        },
+        {
+            "name": "brasil-cripto (Web)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "args": ["-d", "chrome"]
+        },
+        {
+            "name": "brasil-cripto (macOS)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "args": ["-d", "macos"]
+        }
+    ]
+}
