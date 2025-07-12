@@ -7,3 +7,10 @@ class GenericFailure extends Failure {
 class NetworkFailure extends Failure {
   const NetworkFailure([String? message]) : super(message ?? 'Network error');
 }
+
+class RateLimitFailure extends Failure {
+  final bool hasUpgradeMessage;
+
+  const RateLimitFailure([String? message, this.hasUpgradeMessage = false])
+    : super(message ?? 'Rate limit exceeded');
+}
