@@ -1,5 +1,7 @@
 import 'package:brasil_cripto/app_injector.dart';
 import 'package:brasil_cripto/l10n/global_app_localizations.dart';
+import 'package:brasil_cripto/view/pages/home_page/widgets/error_box.dart';
+import 'package:brasil_cripto/view/utils/widgets/dialogs/favoritation_dialog.dart';
 import 'package:brasil_cripto/view/utils/routes/app_navigator/app_navigator.dart';
 import 'package:brasil_cripto/view/utils/routes/main_routes.dart';
 import 'package:brasil_cripto/view/utils/widgets/buttons/coin_tile.dart';
@@ -24,9 +26,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => HomeViewModel(sl()),
+      create: (context) => HomeViewModel(sl(), sl()),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            AppNavigator(context).pushNamed(MainRoutes.favorites.route);
+          },
+          backgroundColor: AppColors.primaryTransparentOrange,
+          child: Icon(Icons.star, color: Colors.white),
+        ),
         body: Consumer<HomeViewModel>(
           builder: (__, viewModel, _) {
             return DefaultPadding(
@@ -54,8 +63,15 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         child: CircularProgressIndicator(),
                       ),
-                    ),
-                  if (viewModel.showEmptyState)
+                    )
+                  else if (viewModel.hasError && viewModel.errorMessage != null)
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: ErrorBox(),
+                      ),
+                    )
+                  else if (viewModel.showEmptyState)
                     Expanded(
                       child: Align(
                         alignment: Alignment.center,
@@ -74,9 +90,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                    ),
-
-                  if (viewModel.coins.isNotEmpty)
+                    )
+                  else if (viewModel.coins.isNotEmpty)
                     Expanded(
                       child: ListView.builder(
                         padding: EdgeInsets.zero,
@@ -88,9 +103,27 @@ class _HomePageState extends State<HomePage> {
                           return CoinTile(
                             coin: coin,
                             isPositive: isPositive,
-                            isFavorite:
-                                true, // Replace with actual favorite logic
-                            onFavoriteTap: () {},
+                            isFavorite: viewModel.isFavoriteCoin(coin.id),
+                            onFavoriteTap: () {
+                              final isFavorite = viewModel.isFavoriteCoin(
+                                coin.id,
+                              );
+
+                              showDialog(
+                                context: context,
+                                builder: (_) {
+                                  return FavoritationDialog(
+                                    isFavorite: isFavorite,
+                                    viewModel: viewModel,
+                                    onFavorited: () {
+                                      viewModel.toggleFavoriteCoin(coin);
+                                      AppNavigator(context).pop();
+                                    },
+                                    coin: coin,
+                                  );
+                                },
+                              );
+                            },
                             onTap: () {
                               AppNavigator(context).pushNamed(
                                 MainRoutes.coinDetails.route,
