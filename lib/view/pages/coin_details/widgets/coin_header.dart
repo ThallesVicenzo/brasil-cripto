@@ -93,8 +93,8 @@ class CoinHeader extends StatelessWidget {
                             ),
                           ),
                           TextButton(
-                            onPressed: () async {
-                              await viewModel.toggleFavorite();
+                            onPressed: () {
+                              viewModel.toggleFavorite();
                               Navigator.of(context).pop();
                             },
                             child: AppText.small(
