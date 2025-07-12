@@ -1,15 +1,26 @@
+import 'dart:async';
+import 'package:brasil_cripto/app_injector.dart';
+import 'package:brasil_cripto/l10n/global_app_localizations.dart';
 import 'package:brasil_cripto/model/models/coin_model.dart';
 import 'package:brasil_cripto/model/repositories/home_repository.dart';
 import 'package:brasil_cripto/model/service/client/errors/failure_impl.dart';
+import 'package:brasil_cripto/view_model/services/favorites_service.dart';
+import 'package:brasil_cripto/view_model/utils/secure_storage/secure_storage.dart';
 import 'package:flutter/material.dart';
 
 class CoinDetailsViewModel extends ChangeNotifier {
-  CoinDetailsViewModel(this.coin, this.homeRepository) {
+  CoinDetailsViewModel(this.coin, this.homeRepository, this.secureStorage) {
     _initializeData();
   }
 
   final CoinModel coin;
   final HomeRepository homeRepository;
+  final SecureStorage secureStorage;
+  final FavoritesService _favoritesService = sl<FavoritesService>();
+
+  StreamSubscription<List<CoinModel>>? _favoritesSubscription;
+
+  AppLocalizations get _intl => sl<GlobalAppLocalizations>().current;
 
   bool isLoading = false;
   bool isFavorite = false;
@@ -18,6 +29,7 @@ class CoinDetailsViewModel extends ChangeNotifier {
 
   List<double> chartData = [];
   int selectedPeriod = 1;
+  List<CoinModel> favoriteCoins = [];
 
   final Map<String, int> periods = {
     '24h': 1,
@@ -36,7 +48,27 @@ class CoinDetailsViewModel extends ChangeNotifier {
   }
 
   void _initializeData() {
+    _initializeFavorites();
     _fetchChartData();
+  }
+
+  void _initializeFavorites() async {
+    await _favoritesService.loadFavorites(secureStorage);
+    isFavorite = _favoritesService.isFavorite(coin.id);
+
+    _favoritesSubscription = _favoritesService.favoritesStream.listen((
+      favorites,
+    ) {
+      isFavorite = _favoritesService.isFavorite(coin.id);
+      notifyListeners();
+    });
+    notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    _favoritesSubscription?.cancel();
+    super.dispose();
   }
 
   Future<void> _fetchChartData() async {
@@ -113,9 +145,8 @@ class CoinDetailsViewModel extends ChangeNotifier {
     }
   }
 
-  void toggleFavorite() {
-    isFavorite = !isFavorite;
-    notifyListeners();
+  Future<void> toggleFavorite() async {
+    await _favoritesService.toggleFavorite(coin, homeRepository);
   }
 
   double get priceChangeAmount {
@@ -159,12 +190,14 @@ class CoinDetailsViewModel extends ChangeNotifier {
   }
 
   String _getErrorMessage(dynamic failure) {
-    if (failure is NetworkFailure) {
-      return 'Erro de conexão. Exibindo dados simulados.';
+    if (failure is RateLimitFailure) {
+      return _intl.rate_limit_upgrade_message;
+    } else if (failure is NetworkFailure) {
+      return _intl.chart_network_error;
     } else if (failure is GenericFailure) {
-      return 'Erro no servidor. Exibindo dados simulados.';
+      return _intl.chart_server_error;
     } else {
-      return 'Erro ao carregar dados do gráfico. Exibindo dados simulados.';
+      return _intl.chart_generic_error;
     }
   }
 }
