@@ -68,7 +68,12 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: Align(
                         alignment: Alignment.center,
-                        child: ErrorBox(),
+                        child: ErrorBox(
+                          errorMessage: viewModel.errorMessage,
+                          onRetry: () {
+                            viewModel.clearError();
+                          },
+                        ),
                       ),
                     )
                   else if (viewModel.showEmptyState)

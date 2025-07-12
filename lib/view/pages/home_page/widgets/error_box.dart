@@ -2,14 +2,14 @@ import 'package:brasil_cripto/app_injector.dart';
 import 'package:brasil_cripto/l10n/global_app_localizations.dart';
 import 'package:brasil_cripto/view/utils/widgets/colors/app_colors.dart';
 import 'package:brasil_cripto/view/utils/widgets/text/app_text.dart';
-import 'package:brasil_cripto/view_model/home_view_model.dart';
 import 'package:flutter/material.dart';
 
 class ErrorBox extends StatelessWidget {
   final intl = sl<GlobalAppLocalizations>().current;
-  final HomeViewModel viewModel = sl<HomeViewModel>();
+  final String? errorMessage;
+  final VoidCallback onRetry;
 
-  ErrorBox({super.key});
+  ErrorBox({super.key, this.errorMessage, required this.onRetry});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ErrorBox extends StatelessWidget {
           Icon(Icons.error_outline, color: Colors.red, size: 48),
           SizedBox(height: 16),
           AppText.medium(
-            viewModel.errorMessage!,
+            errorMessage ?? intl.generic_error_message,
             style: MyTextStyle(
               color: AppColors.negativeRed,
               fontWeight: FontWeight.bold,
@@ -35,9 +35,7 @@ class ErrorBox extends StatelessWidget {
           ),
           SizedBox(height: 16),
           ElevatedButton(
-            onPressed: () {
-              viewModel.clearError();
-            },
+            onPressed: onRetry,
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,

@@ -45,7 +45,12 @@ class _FavoritesPageState extends State<FavoritesPage> {
                     Expanded(
                       child: Align(
                         alignment: Alignment.center,
-                        child: ErrorBox(),
+                        child: ErrorBox(
+                          errorMessage: viewModel.errorMessage,
+                          onRetry: () {
+                            viewModel.clearError();
+                          },
+                        ),
                       ),
                     )
                   else if (viewModel.favoriteCoins.isEmpty)
