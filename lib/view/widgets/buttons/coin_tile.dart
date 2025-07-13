@@ -42,14 +42,14 @@ class CoinTile extends StatelessWidget {
               width: 32,
               height: 32,
               decoration: BoxDecoration(
-                color: Colors.grey[100],
+                color: AppColors.primaryGray,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Center(
                 child: AppText.small(
                   '${coin.marketCapRank}',
                   style: MyTextStyle(
-                    color: Colors.grey[600],
+                    color: AppColors.textGray,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

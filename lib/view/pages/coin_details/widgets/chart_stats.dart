@@ -17,7 +17,7 @@ class ChartStats extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.grey[100],
+        color: AppColors.primaryGray,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(

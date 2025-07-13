@@ -13,6 +13,8 @@ abstract class AppColors {
 
   static Color textGray = const Color(0xFF616161);
 
+  static Color primaryGray = const Color(0xFFF5F5F5);
+
   static Color errorText = const Color(0xFFFB8C00);
 
   static Color primaryTransparentOrange = const Color(

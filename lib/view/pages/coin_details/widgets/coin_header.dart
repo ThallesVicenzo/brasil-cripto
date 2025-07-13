@@ -49,7 +49,7 @@ class CoinHeader extends StatelessWidget {
                     AppText.medium(
                       viewModel.coin.symbol?.toUpperCase() ?? '',
                       style: MyTextStyle(
-                        color: Colors.grey[600],
+                        color: AppColors.textGray,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -176,7 +176,7 @@ class CoinHeader extends StatelessWidget {
                   vertical: 8,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.grey[100],
+                  color: AppColors.primaryGray,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: AppText.small(
