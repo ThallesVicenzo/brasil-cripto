@@ -110,8 +110,6 @@ lib/
 
 ## 📱 Screenshots
 
-### Interface em Português
-
 | Página Inicial | Página de Busca | Detalhes da Moeda | Favoritos |
 |----------------|-----------------|-------------------|-----------|
 | ![Página Inicial](previews/pt_br/initial_page.PNG) | ![Página de Busca](previews/pt_br/search_page.PNG) | ![Detalhes da Moeda](previews/pt_br/coin_details_page.PNG) | ![Favoritos](previews/pt_br/favorite_coins_page.PNG) |
