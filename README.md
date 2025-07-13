@@ -169,8 +169,6 @@ flutter drive --target=test_driver/app.dart
 
 The project includes:
 - Unit tests for models and view models
-- Widget tests for UI components
-- Integration tests for complete workflows
 - Mock services for isolated testing
 
 ## 📄 License
