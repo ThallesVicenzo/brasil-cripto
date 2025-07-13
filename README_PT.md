@@ -25,12 +25,6 @@ Uma aplicação Flutter moderna para acompanhar preços de criptomoedas e gerenc
 - Acesso rápido às suas moedas preferidas
 - Sincronização em tempo real em todo o aplicativo
 
-### 🎨 **UI/UX Moderno**
-- Interface Material Design limpa e intuitiva
-- Animações suaves incluindo fundo de moedas caindo
-- Design responsivo para diferentes tamanhos de tela
-- Esquema de cores personalizado otimizado para visualização de dados de cripto
-
 ### 🌐 **Internacionalização**
 - Suporte a múltiplos idiomas (Inglês/Português)
 - Formatação de moeda localizada
