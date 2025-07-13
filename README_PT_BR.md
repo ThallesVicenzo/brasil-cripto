@@ -117,13 +117,6 @@ lib/
 | ![Página Inicial](previews/pt_br/initial_page.PNG) | ![Página de Busca](previews/pt_br/search_page.PNG) | ![Detalhes da Moeda](previews/pt_br/coin_details_page.PNG) | ![Favoritos](previews/pt_br/favorite_coins_page.PNG) |
 | 🏠 Navegue por criptomoedas em alta | 🔍 Pesquise por moedas específicas | 📊 Gráficos detalhados e estatísticas | ❤️ Gerencie suas moedas favoritas |
 
-### Interface em Inglês (English)
-
-| Initial Page | Search Page | Coin Details | Favorites |
-|--------------|-------------|--------------|-----------|
-| ![Initial Page](previews/english/initial_page.PNG) | ![Search Page](previews/english/search_page.PNG) | ![Coin Details](previews/english/coin_details_page.PNG) | ![Favorites](previews/english/favorite_coins_page.PNG) |
-| 🏠 Browse trending cryptocurrencies | 🔍 Search for specific coins | 📊 Detailed price charts and stats | ❤️ Manage your favorite coins |
-
 ## 🔌 Integração com API
 
 Este aplicativo usa a **API CoinGecko** para dados de criptomoedas:
