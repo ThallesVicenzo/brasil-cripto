@@ -110,8 +110,6 @@ lib/
 
 ## 📱 Screenshots
 
-### English Interface
-
 | Initial Page | Search Page | Coin Details | Favorites |
 |--------------|-------------|--------------|-----------|
 | ![Initial Page](previews/english/initial_page.PNG) | ![Search Page](previews/english/search_page.PNG) | ![Coin Details](previews/english/coin_details_page.PNG) | ![Favorites](previews/english/favorite_coins_page.PNG) |
