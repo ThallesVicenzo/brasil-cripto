@@ -110,9 +110,19 @@ lib/
 
 ## 📱 Screenshots
 
-| Tela Inicial | Detalhes da Moeda | Favoritos | Interação do Gráfico |
-|--------------|-------------------|-----------|----------------------|
-| 🏠 Pesquise e navegue por criptomoedas | 📊 Gráficos detalhados de preços e estatísticas | ❤️ Gerencie moedas favoritas | 👆 Gráfico interativo com toque |
+### Interface em Português
+
+| Página Inicial | Página de Busca | Detalhes da Moeda | Favoritos |
+|----------------|-----------------|-------------------|-----------|
+| ![Página Inicial](previews/pt_br/initial_page.PNG) | ![Página de Busca](previews/pt_br/search_page.PNG) | ![Detalhes da Moeda](previews/pt_br/coin_details_page.PNG) | ![Favoritos](previews/pt_br/favorite_coins_page.PNG) |
+| 🏠 Navegue por criptomoedas em alta | 🔍 Pesquise por moedas específicas | 📊 Gráficos detalhados e estatísticas | ❤️ Gerencie suas moedas favoritas |
+
+### Interface em Inglês (English)
+
+| Initial Page | Search Page | Coin Details | Favorites |
+|--------------|-------------|--------------|-----------|
+| ![Initial Page](previews/english/initial_page.PNG) | ![Search Page](previews/english/search_page.PNG) | ![Coin Details](previews/english/coin_details_page.PNG) | ![Favorites](previews/english/favorite_coins_page.PNG) |
+| 🏠 Browse trending cryptocurrencies | 🔍 Search for specific coins | 📊 Detailed price charts and stats | ❤️ Manage your favorite coins |
 
 ## 🔌 Integração com API
 
