@@ -2,7 +2,7 @@
 
 A modern Flutter application for tracking cryptocurrency prices and managing your favorite digital assets.
 
-[🇧🇷 Leia em Português](README_PT.md)
+[🇧🇷 Leia em Português](README_PT_BR.md)
 
 ## ✨ Features
 
