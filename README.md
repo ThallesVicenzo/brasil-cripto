@@ -25,12 +25,6 @@ A modern Flutter application for tracking cryptocurrency prices and managing you
 - Quick access to your preferred coins
 - Real-time synchronization across the app
 
-### 🎨 **Modern UI/UX**
-- Clean and intuitive Material Design interface
-- Smooth animations including falling coins background
-- Responsive design for different screen sizes
-- Custom color scheme optimized for crypto data visualization
-
 ### 🌐 **Internationalization**
 - Multi-language support (English/Portuguese)
 - Localized currency formatting
