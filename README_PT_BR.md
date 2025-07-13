@@ -141,7 +141,7 @@ Este aplicativo usa a **API CoinGecko** para dados de criptomoedas:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Framework**: Flutter 3.7+
+- **Framework**: Flutter 3.7.2
 - **Linguagem**: Dart
 - **Gerenciamento de Estado**: Provider + ChangeNotifier
 - **Cliente HTTP**: Dio
