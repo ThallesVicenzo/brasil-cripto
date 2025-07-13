@@ -127,7 +127,6 @@ Este aplicativo usa a **API CoinGecko** para dados de criptomoedas:
 ### 📡 **API Gratuita com Limites de Taxa**
 - **URL Base**: `https://api.coingecko.com/api/v3/`
 - **Limite de Taxa**: 10-30 requisições por minuto (nível gratuito)
-- **Não requer chave de API** para uso básico
 - **Dados incluem**: Preços atuais, capitalização de mercado, mudanças em 24h, dados históricos
 
 ### 🎯 **Endpoints Utilizados**
@@ -189,16 +188,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 - Carregamento otimizado de imagens com cache
 - Chamadas mínimas de API com estratégias de cache inteligentes
 - Animações suaves com monitoramento adequado de performance
-
-## 🔮 Melhorias Futuras
-
-- [ ] Alertas de preços e notificações
-- [ ] Rastreamento de portfólio
-- [ ] Tema modo escuro
-- [ ] Integração com mais exchanges de criptomoedas
-- [ ] Indicadores avançados de gráfico
-- [ ] Análise de notícias e sentimento social
-- [ ] Widget para tela inicial
 
 ## 🙋‍♂️ Suporte
 

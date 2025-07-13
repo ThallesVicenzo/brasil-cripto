@@ -127,7 +127,6 @@ This app uses the **CoinGecko API** for cryptocurrency data:
 ### 📡 **Free API with Rate Limits**
 - **Base URL**: `https://api.coingecko.com/api/v3/`
 - **Rate Limit**: 10-30 requests per minute (free tier)
-- **No API key required** for basic usage
 - **Data includes**: Current prices, market caps, 24h changes, historical data
 
 ### 🎯 **Endpoints Used**
@@ -189,16 +188,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Optimized image loading with caching
 - Minimal API calls with smart caching strategies
 - Smooth animations with proper performance monitoring
-
-## 🔮 Future Enhancements
-
-- [ ] Price alerts and notifications
-- [ ] Portfolio tracking
-- [ ] Dark mode theme
-- [ ] More cryptocurrency exchanges integration
-- [ ] Advanced chart indicators
-- [ ] News and social sentiment analysis
-- [ ] Widget for home screen
 
 ## 🙋‍♂️ Support
 
